@@ -4,8 +4,12 @@ Run `bundle install` first.
 
 Usage:
 
+* Array#max_slice_sum
+```ruby
+# returns sum of subarray with largest sum
+[2, -4, 6, 8, -10, 100, -6, 5].max_slice_sum
+#=> 104
 ```
-array.max_slice_sum
-array.max_sum_slice
-array.max_sum_slice_positions
-```
+
+* Array#max_sum_slice
+* Array#max_sum_slice_positions
