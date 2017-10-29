@@ -6,6 +6,13 @@ describe Array do
             expect(Array.new.respond_to?(:sum)).to eql true
         end
 
+        context "given a non-numeric array" do
+            array = ["a", "b", "c"]
+            it "raises a TypeError exception" do
+                expect{(array.max_sum_slice)}.to raise_exception TypeError
+            end
+        end
+
         context "given an empty array" do
             array = []
             it "returns 0" do
