@@ -1,6 +1,6 @@
 class Array
     def sum
-        inject(:+)
+        inject(0, :+)
     end
 
     def max_slice_sum
