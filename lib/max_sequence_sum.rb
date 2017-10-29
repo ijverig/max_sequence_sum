@@ -1,4 +1,8 @@
 class Array
+    def sum
+        inject(:+)
+    end
+    
     def max_slice_sum
         raise TypeError, "can't sum non-numeric values" unless all? {|e| e.is_a? Numeric}
 
