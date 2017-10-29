@@ -19,3 +19,8 @@ Usage:
 ```
 
 * Array#max_sum_slice_positions
+```ruby
+# returns positions of subarray with largest sum
+[2, -4, 6, 8, -10, 100, -6, 5].max_sum_slice_positions
+#=> [2,5]
+```
