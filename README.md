@@ -12,4 +12,10 @@ Usage:
 ```
 
 * Array#max_sum_slice
+```ruby
+# returns subarray with largest sum
+[2, -4, 6, 8, -10, 100, -6, 5].max_sum_slice
+#=> [6, 8, -10, 100]
+```
+
 * Array#max_sum_slice_positions
