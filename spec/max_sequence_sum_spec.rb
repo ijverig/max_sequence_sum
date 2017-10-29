@@ -2,6 +2,10 @@ require "max_sequence_sum"
 
 describe Array do
     describe "#max_slice_sum" do
+        it 'is a method of Array' do
+            expect([0].respond_to?(:max_slice_sum)).to eql true
+        end
+
         context "given a non-numeric array" do
             array = ["a", "b", "c"]
             it "raises a TypeError exception" do
