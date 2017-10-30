@@ -13,8 +13,8 @@ describe Array do
 
         context "given an empty array: []" do
             array = []
-            it "returns an empty array" do
-                expect(array.max_sum_slice).to be_empty
+            it "returns nil" do
+                expect(array.max_sum_slice).to be_nil
             end
         end
 

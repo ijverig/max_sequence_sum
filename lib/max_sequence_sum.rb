@@ -28,7 +28,7 @@ class Array
     # Returns largest sum subarray or [] if array is empty
     def max_sum_slice
         subary, *_ = max_sequence_sum_attribs
-        subary || []
+        subary
     end
 
     # Returns largest sum subarray initial and final positions or [nil,nil] if array is empty
