@@ -35,9 +35,15 @@ Run `bundle install` first.
  => [2,5]
 ```
 
+## History
+
+1. A different approach for each method: [9f173e2…](https://github.com/ijverig/max_sequence_sum/blob/9f173e2c61821bcd8f6d69c27f88a2addcff9763/lib/max_sequence_sum.rb)
+2. A common approach for the methods: [HEAD](https://github.com/ijverig/max_sequence_sum/blob/master/lib/max_sequence_sum.rb)
+3. Optimized version: [optimizations branch](https://github.com/ijverig/max_sequence_sum/tree/optimizations)
+
 ## Rationale
 
-It's an exhaustive solution:
+It's an exhaustive solution. It runs on O(n^2), it's really not efficient for large arrays.
 
 Take `[ 10, -99, 5, 8 ]` as an example array.
 
