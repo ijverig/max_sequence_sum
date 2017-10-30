@@ -46,8 +46,8 @@ describe Array do
             end
         end
 
-        context "given an array: [1,-3,-4,5,2,-7,7,2,8,-1,2,-9,-2,-5]" do
-            array = [1,-3,-4,5,2,-7,7,2,8,-1,2,-9,-2,-5]
+        context "given an array: [1,-3,-4,5,2,-9,7,2,8,-1,2,-9,-2,-5]" do
+            array = [1,-3,-4,5,2,-9,7,2,8,-1,2,-9,-2,-5]
             it "returns its largest sum subarray positions: [6,11]" do
                 expect(array.max_sum_slice_positions).to eql [6,11]
             end
