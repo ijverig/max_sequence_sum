@@ -1,7 +1,7 @@
 max_sequence_sum
 ================
 
-max_sequence_sum is a library extension to Array that finds the sequence with the largest sum inside an array (subarray).
+`max_sequence_sum` is a library extension to Array that finds the sequence with the largest sum inside an array (subarray).
 It has methods to return the sum, the subarray and its initial and final positions.
 
 ## Instructions
@@ -60,7 +60,7 @@ Take `[ 10, -99, 5, 8 ]` as an example array.
        13
 ```
 
-3. Finally we return it, along with its position and sum
+4. Finally we return it, along with its positions and sum
 ```ruby
 subarray  = [5, 8]
 positions = [2,4]
