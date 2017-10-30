@@ -9,33 +9,33 @@ class Array
         inject(0, :+)
     end
 
+    # Returns largest sum subarray and its initial and final positions
+    def max_sequence_sum
+        raise_error_if_non_numeric
+
+        # generates all subarrays with its positions = [subarray, initial position, end position]
+        subarys = []
+        (1..length).each {|size| each_cons(size).with_index {|subary, i| subarys << [subary, i, i+size]}}
+        # returns largest sum subarray and its initial and final positions
+        max_subary, *positions = subarys.max_by {|subary, _, _| subary.sum}
+        [max_subary, *positions]
+    end
+
+    # Returns subarray largest sum or 0 if array is empty
     def max_slice_sum
-        raise_error_if_non_numeric
-
-        # generates all subarray sums
-        subary_sums = []
-        (1..length).each {|size| each_cons(size) {|subary| subary_sums << subary.sum}}
-        # returns subarray largest sum or 0 if array is empty
-        subary_sums.max || 0
+        subary, *_ = max_sequence_sum
+        subary&.sum || 0
     end
 
+    # Returns largest sum subarray or [] if array is empty
     def max_sum_slice
-        raise_error_if_non_numeric
-
-        # generates all subarrays
-        subarys = []
-        (1..length).each {|size| each_cons(size) {|subary| subarys << subary}}
-        # returns largest sum subarray or [] if array is empty
-        subarys.max_by {|ary| ary.sum} || []
+        subary, *_ = max_sequence_sum
+        subary || []
     end
 
+    # Returns largest sum subarray initial and final positions or [nil,nil] if array is empty
     def max_sum_slice_positions
-        raise_error_if_non_numeric
-
-        # generates all subarrays with its sums and positions = [subarray sum, initial position, end position]
-        subarys = []
-        (1..length).each {|size| each_cons(size).with_index {|subary, i| subarys << [subary.sum, i, i+size]}}
-        # returns [initial,end] positions of largest sum subarray or [nil,nil] if array is empty
-        subarys.max&.values_at(1,2) || [nil,nil]
+        _, initial, final = max_sequence_sum
+        [initial, final]
     end
 end
