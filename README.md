@@ -50,78 +50,78 @@ Steps:
 Take `[ 10, -99, 5, 8, -1 ]` as an example array.
 
 1. We assume first item to be the largest sum (10)
+> `[ `_**`<<10>>`**_`, -99, 5, 8, -1 ]`
 ```ruby
-[ __10__, -99, 5, 8, -1 ]
 current_largest = 10
 largest_so_far  = 10
 ```
 
 2. We consider (current subarray + next item) as a candidate for the largest sum (-89)
+> `[ `_**`<<10, -99>>`**_`, 5, 8, -1 ]`
 ```ruby
-[ __10, -99__, 5, 8, -1 ]
 current_largest = -89
 largest_so_far  = 10
 ```
 
 3. If its sum is larger than what we had before, take it as current largest sum (it isn't in this case, 10 is better than -89)
+> `[ `_**`<<10, -99>>`**_`, 5, 8, -1 ]`
 ```ruby
-[ __10, -99__, 5, 8, -1 ]
 current_largest = -89
 largest_so_far  = 10
 ```
 
 4. If taking this candidate lessens our sum, stop considering next items for current largest sum until an item itself is better than what we have so far (keep largest_so_far and reset current_largest to 0)
+> `[ `_**`<<10, -99>>`**_`, 5, 8, -1 ]`
 ```ruby
-[ __10, -99__, 5, 8, -1 ]
 current_largest = 0
 largest_so_far  = 10
 ```
 
 5. We consider (current subarray + next item) as a candidate for the largest sum (5)
+> `[ 10, -99, `_**`<<5>>`**_`, 8, -1 ]`
 ```ruby
-[ 10, -99, __5__, 8, -1 ]
 current_largest = 5
 largest_so_far  = 10
 ```
 
 6. If its sum is larger than what we had before, take it as current largest sum (it isn't in this case, 10 is still better than 5)
+> `[ 10, -99, `_**`<<5>>`**_`, 8, -1 ]`
 ```ruby
-[ 10, -99, __5__, 8, -1 ]
 current_largest = 5
 largest_so_far  = 10
 ```
 
 7. We consider (current subarray + next item) as a candidate for the largest sum (13)
+> `[ 10, -99, `_**`<<5, 8>>`**_`, -1 ]`
 ```ruby
-[ 10, -99, __5, 8__, -1 ]
 current_largest = 13
 largest_so_far  = 10
 ```
 
 8. If its sum is larger than what we had before, take it as current largest sum (13 is indeed better than 10)
+> `[ 10, -99, `_**`<<5, 8>>`**_`, -1 ]`
 ```ruby
-[ 10, -99, __5, 8__, -1 ]
 current_largest = 13
 largest_so_far  = 13
 ```
 
 9. We consider (current subarray + next item) as a candidate for the largest sum (12)
+> `[ 10, -99, `_**`<<5, 8, -1>>`**_` ]`
 ```ruby
-[ 10, -99, __5, 8, -1__ ]
 current_largest = 12
 largest_so_far  = 10
 ```
 
 10. If its sum is larger than what we had before, take it as current largest sum (12 is worse than 13)
+> `[ 10, -99, `_**`<<5, 8, -1>>`**_` ]`
 ```ruby
-[ 10, -99, __5, 8, -1__ ]
 current_largest = 12
 largest_so_far  = 13
 ```
 
 11. If taking this candidate lessens our sum, stop considering next items for current largest sum until an item itself is better than what we have so far (keep largest_so_far and reset current_largest to 0)
+> `[ 10, -99, `_**`<<5, 8, -1>>`**_` ]`
 ```ruby
-[ 10, -99, __5, 8, -1__ ]
 current_largest = 0
 largest_so_far  = 13
 ```
